@@ -52,7 +52,7 @@ document.getElementById("submitForgot").onclick = async () => {
   const email = document.getElementById("email").value;
 
   try {
-    const response = await axios.post("http://0/password/forgotpassword", {
+    const response = await axios.post("/password/forgotpassword", {
       email: email
     });
 
