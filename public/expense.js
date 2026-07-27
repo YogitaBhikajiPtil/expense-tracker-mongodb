@@ -22,7 +22,7 @@ form.addEventListener("submit", async function (e) {
   const token = localStorage.getItem("token");
 
 const res = await axios.post(
-  "http://localhost:3000/expenses/add",
+  "http://0/expenses/add",
   {
     amount,
     description,
@@ -62,7 +62,7 @@ function showExpense(expense) {
 async function deleteExpense(id, button) {
   const token = localStorage.getItem("token");
 
-  await axios.delete(`http://localhost:3000/expenses/delete/${id}`, {
+  await axios.delete(`http://0/expenses/delete/${id}`, {
     headers: { Authorization: `Bearer ${token}` }
   });
 
@@ -82,7 +82,7 @@ document.getElementById("buyPremiumBtn").onclick = async function () {
   const token = localStorage.getItem("token");
 
   const response = await axios.get(
-    "http://localhost:3000/purchase/premium",
+    "http://0/purchase/premium",
     { headers: { Authorization: `Bearer ${token}` } }
   );
 
@@ -100,7 +100,7 @@ document.getElementById("buyPremiumBtn").onclick = async function () {
 
    
     await axios.post(
-      "http://localhost:3000/purchase/updatetransactionstatus",
+      "http://0/purchase/updatetransactionstatus",
       {
         orderId: orderId,
         paymentId: "demo_payment",
@@ -174,7 +174,7 @@ async function showLeaderboard(){
  const token = localStorage.getItem("token");
 
  const res = await axios.get(
- "http://localhost:3000/purchase/premium/showLeaderboard",
+ "http://0/purchase/premium/showLeaderboard",
  { headers:{Authorization:`Bearer ${token}`} }
  );
  
@@ -200,7 +200,7 @@ async function fetchReport(type) {
     const token = localStorage.getItem("token");
 
     const res = await axios.get(
-      `http://localhost:3000/expenses/report?filter=${type}`,
+      `http://0/expenses/report?filter=${type}`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
@@ -224,7 +224,7 @@ async function downloadReport() {
     const token = localStorage.getItem("token");
 
     const res = await axios.get(
-      "http://localhost:3000/expenses/download",
+      "http://0/expenses/download",
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
@@ -245,7 +245,7 @@ async function getExpenses(page = 1, limit = 10) {
   try {
 
     const res = await axios.get(
-      `http://localhost:3000/expenses/get?page=${page}&limit=${limit}`,
+      `http://0/expenses/get?page=${page}&limit=${limit}`,
       {
         headers: {
           Authorization: `Bearer ${token}`

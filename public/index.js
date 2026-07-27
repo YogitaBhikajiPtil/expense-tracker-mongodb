@@ -17,7 +17,7 @@ form.addEventListener("submit", async function (e) {
     }
 
     // Axios POST request
-    const response = await axios.post("http://localhost:3000/auth/signup", {
+    const response = await axios.post("http://0/auth/signup", {
       name, 
       email,
       password 
@@ -48,7 +48,7 @@ form.addEventListener("submit", async function (e) {
 //   deleteBtn.textContent = "Delete";
 
 //   deleteBtn.onclick = async () => {
-//     await fetch(`http://localhost:3000/expenses/delete/${expense.id}`, {
+//     await fetch(`http://0/expenses/delete/${expense.id}`, {
 //       method: "DELETE"
 //     });
 
