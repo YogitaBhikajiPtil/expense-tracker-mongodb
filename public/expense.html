@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <style>
+#buyPremiumBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: gold;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#buyPremiumBtn:hover {
+  background-color: orange;
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body style="display:none;">
+
+<h2>Daily Expense Tracker</h2>
+
+<!-- Expense Form -->
+<button id="buyPremiumBtn">Buy Premium Membership</button>
+
+<form id="expenseForm">
+  <input type="number" id="amount" placeholder="Money Spent" required><br><br>
+ 
+  <input type="text" id="description" placeholder="Description" required><br><br>
+
+  <!-- Category Dropdown -->
+  <select id="category" required>
+    <option value="">Select Category</option>
+    <option value="Food">Food</option>
+    <option value="Petrol">Petrol</option>
+    <option value="Salary">Salary</option>
+    <option value="Shopping">Shopping</option>
+  </select><br><br>
+
+  <input type="text" id="note" placeholder="Enter note" />
+
+  <button type="submit">Add Expense</button>
+</form>
+
+<hr>
+
+<!-- Expense Table -->
+<table border="1" width="500">
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Action</th>
+    </tr> 
+  </thead>
+  <tbody id="expenseTable"></tbody>
+</table>
+
+<label>Expenses per page:</label>
+<select id="limit">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="20">20</option>
+  <option value="40">40</option>
+</select>
+
+<div>
+  <ul id="expense-list"></ul>
+</div>
+
+<div id="pagination"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+<script src="./expense.js"></script>
+
+</body>
+</html>

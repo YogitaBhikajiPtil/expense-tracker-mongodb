@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .signup-btn {
+      margin-top: 15px;
+      background: #28a745;
+    }
+
+    .message {
+      margin-top: 10px;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Login</h2>
+
+    <form id="loginForm" novalidate>
+      <input type="email" id="email" placeholder="Enter Email">
+      <input type="password" id="password" placeholder="Enter Password">
+     <button type="submit">Login</button>
+      <!-- <a href="expense.html">Login</a> -->
+    </form>
+
+    <button class="signup-btn" onclick="goToSignup()">
+      New User? Signup
+    </button>
+
+    <div class="message" id="message"></div>
+
+    <button id="forgotPasswordBtn">Forgot Password?</button>
+
+    <div id="forgotForm" style="display:none;">
+  <input type="email" id="email" placeholder="Enter your email" required />
+  <button id="submitForgot">Submit</button>
+</div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./login.js"></script>
+</body>
+</html>
+
+          
+
