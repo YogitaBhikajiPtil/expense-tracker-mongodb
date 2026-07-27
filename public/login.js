@@ -13,7 +13,7 @@ form.addEventListener("submit", async function (e) {
   }
 
   try {
-    const res = await axios.post("http://localhost:3000/auth/login", {
+    const res = await axios.post("/auth/login", {
       email,
       password
     });
