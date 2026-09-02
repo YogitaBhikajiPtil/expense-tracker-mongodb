@@ -50,7 +50,7 @@ function showExpense(expense) {
     <td>${expense.description}</td>
     <td>${expense.category}</td>
      <td>
-      <button onclick="deleteExpense(${expense.id}, this)">
+      <button onclick="deleteExpense(${expense._id}, this)">
         Delete
       </button>
     </td>
