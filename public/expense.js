@@ -49,12 +49,18 @@ function showExpense(expense) {
     <td>${expense.amount}</td>
     <td>${expense.description}</td>
     <td>${expense.category}</td>
-     <td>
-      <button onclick="deleteExpense(${expense._id}, this)">
+    <td>
+      <button class="delete-btn">
         Delete
       </button>
     </td>
   `;
+
+  const deleteButton = row.querySelector(".delete-btn");
+
+  deleteButton.addEventListener("click", () => {
+    deleteExpense(expense._id, deleteButton);
+  });
 
   table.appendChild(row);
 }
